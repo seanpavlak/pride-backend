@@ -271,7 +271,7 @@ Producing a model with an accuracy of 84.65\% after training for 9.63 seconds an
 
 Party 5 was able to produce the following confusion matrix.
 
-<img src="./results/model_cm_5.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_5.png" width="70%" style="display: block; margin: auto;" />
 
 Producing a model with an accuracy of 91.80\% after training on only 300 local data points in 53.3 seconds. The resulting confusion matrix also shows no strong biases toward any set of digits.
 
