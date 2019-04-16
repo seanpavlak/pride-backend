@@ -31,7 +31,7 @@ Utilizing a form of differential privacy or homomorphic encryption has been util
 ## Methods
 In this federated learning proof of concept, I attempted to adhere to the structure of federated learning designed by Google's team [Research:Federated] while attempting to implement a federated averaging algorithm set up by McMahan's group [McMahan:Federated].
 
-<img src="./results/algo_1.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/algo_1.png" width="40%" style="display: block; margin: auto;" />
 
 In this proof of concept I decided to take an iterative approach. I first set out to perform linear regression on the MNIST dataset, to establish a baseline model. Then I set out to perform a 2-party federated learning example, once this was achieved I performed the 2-party case 4 more times to attempt to simulate a 6-party federated learning simulation.
 
@@ -232,14 +232,14 @@ Once these encrypted average matrices are produced, the cloud can then use their
 
 In the baseline linear regression on the MNIST dataset example I was able to produce the resulting confusion matrix. \\
 
-<img src="./results/model_cm_base.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_base.png" width="70%" style="display: block; margin: auto;" />
 
 
 Demonstrating that when trained on all available MNIST data points, 60,000 data points, a linear regression model is able to achieve a 91.75\% accuracy. This model appears to have an even distribution of all 10 digits, and was able to be trained in 54.8 seconds.
 
 Once baseline was set, the cloud's confusion matrix could be produced. The cloud's model was trained on only 1,200 data points.
 
-<img src="./results/model_cm_0.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0.png" width="70%" style="display: block; margin: auto;" />
 
 This confusion model shows the score of a a model that was trained on 1,200 data points in 1.06 seconds. This model produced an accuracy of 89.50\% and also has an even distribution of most digits. The 2 and 9 digit case are predicted less frequently, resulting in a good test case for federated learning.
 
@@ -247,25 +247,25 @@ Once the cloud's model is trained all other parties' models can be trained in pa
 
 Party 1 was able to produce the following confusion matrix.
 
-<img src="./results/model_cm_1.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_1.png" width="70%" style="display: block; margin: auto;" />
 
 Producing a model with an accuracy of 93.62\%, similar to the baseline example, after training on 30,000 local data points in 28.90 seconds. And producing the same even distribution as the baseline.
 
 Party 2 was able to produce the following confusion matrix.
 
-<img src="./results/model_cm_2.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_2.png" width="70%" style="display: block; margin: auto;" />
 
 Producing a model with an accuracy of 91.78\%, very similar to the baseline example, after training on only 3,000 local data points in 54.20 seconds. This model also was able to produce an even distribution, showing us that the 3,000 local data points were most likely evenly distributed between all 10 digits. Resulting in very little bias between digits.
 
 Party 3 was able to produce the following confusion matrix.
 
-<img src="./results/model_cm_3.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_3.png" width="70%" style="display: block; margin: auto;" />
 
 Producing a model with an accuracy of 80.50\% after training for 1.08 seconds and producing strong biases towards 0, 1, 2, and 7. This model was trained on only 1,200 local data points, which is slightly surprising since this is a similar count to the cloud case.
 
 Party 4 was able to produce the following confusion matrix.
 
-<img src="./results/model_cm_4.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_4.png" width="70%" style="display: block; margin: auto;" />
 
 Producing a model with an accuracy of 84.65\% after training for 9.63 seconds and producing no strong bias. This model was trained on 12,000 local data points. 
 
@@ -279,23 +279,23 @@ Once all models were trained in parallel they could then be averaged for the 2-p
 
 This produced the following confusion matrices.
 
-<img src="./results/model_cm_0+1.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0+1.png" width="70%" style="display: block; margin: auto;" />
 
 Averaging the cloud model and party 1's model, we were able to produce a new model which collectively took 30.95 seconds to train, encrypt, and decrypt. This model produced an accuracy 4\% higher than the original cloud model, and eliminated the original model's bias.
 
-<img src="./results/model_cm_0+2.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0+2.png" width="70%" style="display: block; margin: auto;" />
 
 Averaging the cloud model and party 2's model, we were able to produce a new model which collectively took 56.29 seconds to train, encrypt, and decrypt. This model produced an accuracy 4\% higher than the original cloud model, and slightly reduced the original model's bias. 
 
-<img src="./results/model_cm_0+3.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0+3.png" width="70%" style="display: block; margin: auto;" />
 
 Averaging the cloud model and party 3's model, we were able to produce a new model which collectively took 3.22 seconds to train, encrypt, and decrypt. This model produced an accuracy 5\% lower than the original cloud model, and slightly reduced the original model's bias except for the 5 digit case. 
 
-<img src="./results/model_cm_0+4.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0+4.png" width="70%" style="display: block; margin: auto;" />
 
 Averaging the cloud model and party 4's model, we were able to produce a new model which collectively took 11.66 seconds to train, encrypt, and decrypt. This model produced an accuracy 1.5\% lower than the original cloud model, and slightly reduced the original model's bias. 
 
-<img src="./results/model_cm_0+5.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_0+5.png" width="70%" style="display: block; margin: auto;" />
 
 Averaging the cloud model and party 5's model, we were able to produce a new model which collectively took 55.40 seconds to train, encrypt, and decrypt. This model produced an accuracy 5\% higher than the original cloud model, and reducing the original model's bias. 
 
@@ -303,7 +303,7 @@ This last case is very interesting as the original model was trained on 1,200 da
 
 The last case explored was the 6-party case, generalized to an n-party case. This was able to produce the following model and confusion matrix.
 
-<img src="./results/model_cm_Federated.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/model_cm_Federated.png" width="70%" style="display: block; margin: auto;" />
 
 This model was produced using all 6 trained models and was able to generate an accuracy score of 93.0\%, 3.5\% higher than the original model. This approach also performed 1.25\% higher than the baseline model.
 
@@ -317,7 +317,7 @@ This produces a total training time of 56.45 seconds, which is only 0.16 seconds
 
 Federated learning is not immune to privacy threats. In the most trivial case if someone gets into your local device, your data is at risk. This is the trivial case as every privacy preserving mechanism is going to be vulnerable to this type of attack. 
 
-<img src="./results/attack.png" width="100%" style="display: block; margin: auto;" />
+<img src="./results/attack.png" width="70%" style="display: block; margin: auto;" />
 
 However, excluding the trivial case the aggregation phase of federated learning is vulnerable. In this phase all users send their ephemeral training summaries to the cloud, so that the cloud can average them or choose the most accurate for redistribution.
 
