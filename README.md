@@ -332,9 +332,15 @@ These attacks can be subverted by the same mechanisms established in the previou
 
 ## References
 [1] Federated learning: Collaborative machine learning without centralized training data, Apr 2017.
+
 [2] R. A. N. J. K. S. M. S. H. M. B. . S. T. Andre Esteva, Brett Kuprel. Dermatologist-level classification of skin cancer with deep neural networks. Nature, 2017.
+
 [3] R. C. Geyer, T. Klein, and M. Nabi. Differentially Private Federated Learning: A Client Level Perspective. ArXiv e-prints, Dec. 2017.
+
 [4] J. Konecny ́, H. B. McMahan, F. X. Yu, P. Richta ́rik, A. T. Suresh, and D. Bacon. Federated learning: Strategies for improving communication efficiency. CoRR, abs/1610.05492, 2016.
+
 [5] H. B. McMahan, E. Moore, D. Ramage, and B. A. y Arcas. Federated learning of deep networks using model averaging. CoRR, abs/1602.05629, 2016.
+
 [6] M. Nabi. Privacy-preserving collaborative machine learning - sap leonardo machine learning research - medium, Sep 2017.
+
 [7] J. Rodriguez. What’s new in deep learning research: Understanding federated learning, Feb 2018.
