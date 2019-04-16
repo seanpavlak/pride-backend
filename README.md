@@ -1,12 +1,6 @@
 # pride-backend
 Privacy Preserving Federated Learning on a Deep Neural Network
 
-Sean Pavlak
-
-Case Western Reserve University Cleveland, OH 
-
-seanpavlak@gmail.com
-
 ## ABSTRACT
 Groundbreaking developments in medicine, economics, etc. are taking place everyday due to the field of machine learning. However, rarely is your data truly protected. The modern paradigm in data science and machine learning is to aggregate everyones sensitive data in a data center and protect it behind a layer of encryption. This, however, has been shown to be an unsafe practice; as shown in major data leaks by Apple, Equifax, and many more. A potential solution is to allow users to retain their data locally and protect it locally, while still retaining the ability for learning models to be developed using this data. Federated Learning is a recent advance in privacy protection and is a real solution to this issue. This technology is a means to learn a shared model by aggregating locally-computed updates while the sensitive training data distributed locally across many parties remains local to each party. I intend on implementing federated learning of deep networks based on iterative model averaging on a chosen data set, MNIST data set. However, this learning method is vulnerable to differential attacks, which could originate from any party contributing during federated optimization. In such an attack, a client's contribution during training and information about their data set is revealed through analyzing the distributed model. I plan on protecting against this by implementing a set of privacy preserving measures to ensure that this sensitive data is protected against adversarial parties during training. The aim is also to balance the trade-off between privacy loss and model performance.
 
